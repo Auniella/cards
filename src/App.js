@@ -1,24 +1,65 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { nanoid } from "nanoid";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import FormPage from "./FormPage";
+import CardsPage from "./CardsPage";
 
-function App() {
+function App(props) {
+  const [isModalOpen, setisModalOpen] = useState(false);
+
+  function openModal() {
+    setisModalOpen(true);
+    console.log("true");
+  }
+  function closeModal() {
+    setisModalOpen(false);
+    console.log("false");
+  }
+
+  const [cards, setCards] = useState(props.cards);
+
+  function addCard(imageUrl, newTitre, newDetails) {
+    // console.log(imageUrl, newTitre, newDetails);
+    const newCard = {
+      id: `card-${nanoid()}`,
+      imageUrl: imageUrl,
+      titre: newTitre,
+      details: newDetails,
+    };
+    // console.log(1, newCard);
+    setCards([...cards, newCard]);
+    // console.log(2, cards);
+  }
+
+  function deleteCard(id) {
+    // console.log(id);
+    const newCards = cards.filter((card) => card.id !== id);
+    setCards(newCards);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <div className="container">
+          <Routes>
+            <Route path="/" element={<FormPage addCard={addCard} />} />
+            <Route
+              path="/cards"
+              element={
+                <CardsPage
+                  cards={cards}
+                  deleteCard={deleteCard}
+                  isModalOpen={isModalOpen}
+                  openModal={openModal}
+                  closeModal={closeModal}
+                />
+              }
+            />
+          </Routes>
+        </div>
+        <footer>Made with ❤️ by Auni</footer>
+      </div>
+    </Router>
   );
 }
 

@@ -1,13 +1,338 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@1..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+  font-size: 62.5%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --primary-color: #000080;
+  --secondary-color: #FFEDDF;
+  --third-color: #1F1F1F;
+  --fourth-color: #BF0603;
+  --background-color: #F5F5F5;
+  --heading-font: "Hepta Slab", serif;
+  --text-size: 1.6rem;
+  --text-font: "Raleway", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 96vh;
+  margin: 0;
+  background-color: var(--background-color);
+}
+
+#root {
+  width: 100%;
+  min-height: 96vh;
+}
+
+.App {
+  min-height: 96vh;
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+  /* padding: 0;
+  margin: 0; */
+}
+
+.container {
+  min-height: 96vh;
+  padding: 1rem 2rem 0 2rem;
+}
+
+header {
+  margin: 2.5rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header,
+h2,
+footer {
+  background-color: rgba(0, 0, 128, 0.2);
+}
+
+h1 {
+  font-size: 4.5rem;
+  margin: 1rem auto;
+
+}
+
+h1,
+h2 {
+  display: inline-block;
+  text-align: center;
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+form {
+  height: 70vh;
+}
+
+.oneInput {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+
+.oneInput.image,
+.oneInput.titre {
+  height: 20%;
+}
+
+.oneInput.details {
+  height: 50%;
+}
+
+.oneInput.button {
+  height: 10%;
+}
+
+label {
+  width: 100%;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-family: var(--text-font);
+}
+
+input[type=text],
+textarea {
+  outline: none;
+  font-family: var(--text-font);
+  width: 100%;
+  font-size: 1.4rem;
+  margin-bottom: 3%;
+  padding: 0.5rem 1rem;
+  border-radius: 0.7rem;
+  border: 0.1rem solid var(--primary-color);
+  box-shadow: 0.1rem 0.1rem 0.3rem var(--third-color);
+}
+
+input[type=text] {
+  height: 37%;
+}
+
+textarea {
+  height: 80%;
+}
+
+hr {
+  width: 97%;
+  opacity: 0.4;
+  border: 0.1rem dashed var(--primary-color);
+}
+
+.cards {
+  margin: 6rem auto;
+  width: 100%;
+  display: grid;
+  grid-auto-rows: auto;
+  grid-template-columns: repeat(auto-fill, 20rem);
+  gap: 2.5rem;
+  justify-content: space-between;
+}
+
+.card-container {
+  width: 100%;
+  height: 30rem;
+  border-radius: 1.5rem;
+  border: 0.1rem solid var(--third-color);
+  transition: box-shadow 0.2s 0.1s;
+}
+
+.card-container:hover {
+  cursor: pointer;
+  box-shadow: 0.1rem 0.1rem 0.7rem 0.2rem rgba(31, 31, 31, 0.4);
+}
+
+.top {
+  height: 55%;
+  position: relative;
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+#delete {
+  padding: 0;
+  border: none;
+  font-size: 2rem;
+  color: var(--fourth-color);
+  opacity: 0.2;
+  cursor: pointer;
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+}
+
+#delete:hover {
+  opacity: 1;
+}
+
+
+.img-container {
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.bottom {
+  height: 45%;
+  padding: 0.5rem 1rem 1.5rem 1rem;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 72% 28%;
+}
+
+#heart {
+  margin-top: 1rem;
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+button {
+  grid-column: 1 / span 2;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  width: 100%;
+  padding: 0.5rem 1.4rem;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border-radius: 0.7rem;
+  border: none;
+  font-weight: 500;
+  font-family: var(--text-font);
+}
+
+#delete,
+button {
+  transition: filter 0.2s, opacity 0.2s transform 0.5s;
+}
+
+button:active,
+#delete.active {
+  transform: scale(0.95);
+}
+
+button:hover {
+  filter: brightness(135%);
+}
+
+.buttonNav {
+  opacity: 0.8;
+  font-size: 2.5rem;
+  font-weight: 900;
+  width: fit-content;
+  color: var(--primary-color);
+  background-color: transparent;
+}
+
+h3 {
+  font-size: 1.6rem;
+  margin: 0.7rem auto 0.3rem auto;
+  font-family: var(--heading-font);
+  text-transform: capitalize;
+}
+
+p {
+  width: 15rem;
+  height: 5.4rem;
+  font-size: var(--text-size);
+  font-family: var(--text-font);
+  margin: 0.7rem auto 0.3rem auto;
+  overflow: auto;
+}
+
+footer {
+  font-size: 1.2rem;
+  text-align: center;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  z-index: -5;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .newFormDiv {
+    min-height: 96vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .formDiv {
+    width: 65%;
+    padding: 0 2rem;
+    background: rgba(250, 250, 250, 0.15);
+    backdrop-filter: blur(2rem);
+    border-radius: 1rem;
+    box-shadow: 0 0.8rem 3.2rem rgba(0, 0, 0, 0.2);
+  }
+
+  footer {
+    width: 100%;
+    border-radius: 0 0 1rem 1rem;
+  }
+}
+
+/* src/components/CustomModal.css */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.8rem;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2.4rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }

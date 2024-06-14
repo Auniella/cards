@@ -1,17 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+// import plongeonImage from "./Assets/images/Plongeon orange.jpg";
+// import cassetteImage from "./Assets/images/Cassette.jpg";
+// import parisImage from "./Assets/images/Paris.jpg";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+const DATA = [
+  {
+    id: "card-1",
+    imageUrl: "./Assets/images/Plongeon orange.jpg",
+    titre: "titre",
+    details: "details",
+  },
+  {
+    id: "card-2",
+    imageUrl: "./Assets/images/Cassette.jpg",
+    titre: "titre",
+    details: "details",
+  },
+  {
+    id: "card-3",
+    imageUrl: "./Assets/images/Paris.jpg",
+    titre: "titre",
+    details: "details",
+  },
+];
 root.render(
   <React.StrictMode>
-    <App />
+    <App cards={DATA} />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
