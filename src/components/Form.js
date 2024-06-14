@@ -38,11 +38,11 @@ export default function Form(props) {
     setImageUrl("");
     setTitre("");
     setDetails("");
-    navigate("/cards");
+    navigate("/cards-react/cards");
   }
 
   const cardsNav = () => {
-    navigate("/cards");
+    navigate("/cards-react/cards");
   };
 
   return (

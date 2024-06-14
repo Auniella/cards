@@ -11,19 +11,19 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 const DATA = [
   {
     id: "card-1",
-    imageUrl: "./Assets/images/Plongeon orange.jpg",
+    imageUrl: process.env.PUBLIC_URL + "/Assets/images/Plongeon orange.jpg",
     titre: "titre",
     details: "details",
   },
   {
     id: "card-2",
-    imageUrl: "./Assets/images/Cassette.jpg",
+    imageUrl: process.env.PUBLIC_URL + "/Assets/images/Cassette.jpg",
     titre: "titre",
     details: "details",
   },
   {
     id: "card-3",
-    imageUrl: "./Assets/images/Paris.jpg",
+    imageUrl: process.env.PUBLIC_URL + "/Assets/images/Paris.jpg",
     titre: "titre",
     details: "details",
   },

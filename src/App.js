@@ -42,9 +42,12 @@ function App(props) {
       <div className="App">
         <div className="container">
           <Routes>
-            <Route path="/" element={<FormPage addCard={addCard} />} />
             <Route
-              path="/cards"
+              path="/cards-react"
+              element={<FormPage addCard={addCard} />}
+            />
+            <Route
+              path="/cards-react/cards"
               element={
                 <CardsPage
                   cards={cards}

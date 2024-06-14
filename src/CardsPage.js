@@ -23,7 +23,7 @@ export default function CardsPage({ cards, deleteCard }) {
   const navigate = useNavigate();
 
   const backNav = () => {
-    navigate("/");
+    navigate("/cards-react");
   };
 
   const cardList = cards.map((card) => (
