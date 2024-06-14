@@ -2,7 +2,7 @@
   "name": "cards",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://auniella.github.io/cards-react",
+  "homepage": "https://Auniella.github.io/cards-react",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
@@ -43,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }
