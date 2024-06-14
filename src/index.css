@@ -266,6 +266,7 @@ p {
 }
 
 footer {
+  padding: 0.5rem;
   font-size: 1.2rem;
   text-align: center;
   position: sticky;
@@ -294,6 +295,7 @@ footer {
 
   footer {
     width: 100%;
+    font-size: 1.3rem;
     border-radius: 0 0 1rem 1rem;
   }
 }

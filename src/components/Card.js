@@ -23,7 +23,7 @@ export default function Card(props) {
           <h3>{props.titre}</h3>
           <p>{props.details}</p>
         </div>
-        <button id="agrandir" onClick={() => props.openModal()}>
+        <button id="agrandir" onClick={() => props.openModal(props.imageUrl)}>
           Afficher
         </button>
       </div>

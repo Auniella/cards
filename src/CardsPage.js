@@ -13,11 +13,12 @@ export default function CardsPage({ cards, deleteCard }) {
   function openModal(imageUrl) {
     setSelectedImage(imageUrl);
     setShowModal(true);
-    console.log(imageUrl);
+    // console.log("openModal", imageUrl);
   }
-  function closeModal(imageUrl) {
+  function closeModal() {
     setSelectedImage("");
     setShowModal(false);
+    // console.log("closeModal");
     //console.log("false");
   }
   const navigate = useNavigate();
